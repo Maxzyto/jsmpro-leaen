@@ -32,5 +32,6 @@
     "typescript",
     "typescriptreact",
     "json"
-  ]
+  ],
+  "cSpell.words": ["grotesk", "mdxeditor"]
 }
