@@ -1,7 +1,5 @@
-import type { Config } from "tailwindcss";
-
-const config: Config = {
-  darkMode: ["class"],
+/** @type {import('tailwindcss').Config} */
+module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -11,28 +9,28 @@ const config: Config = {
     extend: {
       colors: {
         primary: {
-          "100": "#FFF1E6",
-          "500": "#FF7000",
+          100: "#FFF1E6",
+          500: "#FF7000",
         },
         dark: {
-          "100": "#000000",
-          "200": "#0F1117",
-          "300": "#151821",
-          "400": "#212734",
-          "500": "#101012",
+          100: "#000000",
+          200: "#0F1117",
+          300: "#151821",
+          400: "#212734",
+          500: "#101012",
         },
         light: {
-          "400": "#858EAD",
-          "500": "#7B8EC8",
-          "700": "#DCE3F1",
-          "800": "#F4F6F8",
-          "850": "#FDFDFD",
-          "900": "#FFFFFF",
+          400: "#858EAD",
+          500: "#7B8EC8",
+          700: "#DCE3F1",
+          800: "#F4F6F8",
+          850: "#FDFDFD",
+          900: "#FFFFFF",
         },
       },
       borderRadius: {
-        "2": "8px",
-        "1.5": "6px",
+        2: "8px",
+        1.5: "6px",
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
@@ -58,7 +56,6 @@ const config: Config = {
       },
     },
   },
-  // plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
+  plugins: [require("tailwindcss-animate")],
 };
 
-export default config;

@@ -45,5 +45,11 @@
     "typescriptreact",
     "json"
   ],
-  "cSpell.words": ["grotesk", "mdxeditor"]
+  "cSpell.words": [
+    "darkgradient",
+    "darknone",
+    "grotesk",
+    "mdxeditor",
+    "turbopack"
+  ]
 }
