@@ -4,6 +4,7 @@ import "./globals.css";
 import React from "react";
 import ThemeProvider from "@/context/Theme"; // Replace with the actual library
 import localFont from "next/font/local";
+import Toaster from "@/components/ui/toaster";
 
 const inter = localFont({
   src: "./fonts/interVF.ttf",
@@ -44,6 +45,7 @@ export default function RootLayout({
         >
           {children}
         </ThemeProvider>
+        <Toaster />
       </body>
     </html>
   );

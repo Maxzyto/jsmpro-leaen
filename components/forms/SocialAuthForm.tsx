@@ -1,14 +1,37 @@
+"use client";
+
 import React from "react";
 import { Button } from "../ui/button";
 import Image from "next/image";
-
+import { toast } from "sonner";
+import { signIn } from "@/auth";
+import ROUTES from "@/constants/routes";
 const SocialAuthForm = () => {
+  const handlSignIn = async (provider: "github" | "google") => {
+    try {
+      await signIn(provider, {
+        callbackURL: ROUTES.HOME,
+        redirect: false,
+      });
+    } catch (error) {
+      console.error(error);
+      toast({
+        title: "Sign-in failed",
+        description:
+          error instanceof Error
+            ? error.message
+            : "An error occurred during sign-in",
+        variant: "destructive",
+      });
+    }
+  };
+
   const buttonClasses =
     "background-dark400_light900 body-medium text-dark200_light800 min-h-12 flex-1 rounded-2 px-4 py-3";
 
   return (
     <div className="mt-10 flex flex-wrap gap-2.5">
-      <Button className={buttonClasses}>
+      <Button className={buttonClasses} onClick={() => handlSignIn("google")}>
         <Image
           src="/icons/google.svg"
           alt="Google"
@@ -19,7 +42,7 @@ const SocialAuthForm = () => {
         <span>Log in with Google</span>
       </Button>
 
-      <Button className={buttonClasses}>
+      <Button className={buttonClasses} onClick={() => handlSignIn("github")}>
         <Image
           src="/icons/github.svg"
           alt="Google"
