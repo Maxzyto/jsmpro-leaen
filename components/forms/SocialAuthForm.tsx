@@ -4,25 +4,22 @@ import React from "react";
 import { Button } from "../ui/button";
 import Image from "next/image";
 import { toast } from "sonner";
-import { signIn } from "@/auth";
+import { signIn } from "next-auth/react";
 import ROUTES from "@/constants/routes";
 const SocialAuthForm = () => {
   const handlSignIn = async (provider: "github" | "google") => {
     try {
       await signIn(provider, {
-        callbackURL: ROUTES.HOME,
+        callbackUrl: ROUTES.HOME,
         redirect: false,
       });
     } catch (error) {
       console.error(error);
-      toast({
-        title: "Sign-in failed",
-        description:
-          error instanceof Error
-            ? error.message
-            : "An error occurred during sign-in",
-        variant: "destructive",
-      });
+      toast.error(
+        error instanceof Error
+          ? error.message
+          : "An error occurred during sign-in"
+      );
     }
   };
 
