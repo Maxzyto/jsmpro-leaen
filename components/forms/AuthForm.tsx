@@ -11,7 +11,7 @@ import {
 } from "react-hook-form";
 import { z, ZodType } from "zod";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "../../components/ui/button";
 import {
   Form,
   FormControl,
@@ -19,9 +19,9 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import ROUTES from "@/constants/routes";
+} from "../../components/ui/form";
+import { Input } from "../../components/ui/input";
+import ROUTES from "../../constants/routes";
 
 interface AuthFormProps<T extends FieldValues> {
   schema: ZodType<T>;

@@ -1,7 +1,7 @@
 import React from "react";
 import NavLinks from "./NavLinks";
-import { Button } from "@/components/ui/button";
-import ROUTES from "@/constants/routes";
+import { Button } from "../../ui/button";
+import ROUTES from "../../../constants/routes";
 import { Link } from "lucide-react";
 import Image from "next/image";
 

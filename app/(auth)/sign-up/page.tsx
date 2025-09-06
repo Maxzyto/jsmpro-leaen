@@ -1,7 +1,7 @@
 "use client";
 
-import AuthForm from "@/components/forms/AuthForm";
-import { SignInSchema, SignUpSchema } from "@/lib/validation";
+import AuthForm from "../../../components/forms/AuthForm";
+import { SignInSchema, SignUpSchema } from "../../../lib/validation";
 import React from "react";
 
 function page() {
